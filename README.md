@@ -1,2 +1,798 @@
+[index.html](https://github.com/user-attachments/files/27089149/index.html)
 [veener.ai-main.txt](https://github.com/user-attachments/files/27089115/veener.ai-main.txt)
 # Ai
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veneer AI — Rapid E-commerce Branding for 2026</title>
+  <meta name="description" content="Veneer AI transforms basic dropshipping stores into high-end, high-trust brands with AI-driven visual identity and conversion copywriting. Launch your premium brand in under 24 hours." />
+  <meta property="og:title" content="Veneer AI — Rapid E-commerce Branding for 2026" />
+  <meta property="og:description" content="Bridge the Trust Gap. Get a premium name, mission statement, Japandi-inspired logo, and ad hooks in under 24 hours." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b0f0e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f0e;
+      --bg-soft:#101614;
+      --panel:rgba(255,255,255,0.06);
+      --panel-2:rgba(255,255,255,0.08);
+      --line:rgba(255,255,255,0.12);
+      --text:#f5f7f6;
+      --muted:#b7c0bc;
+      --accent:#d8c6a5;
+      --accent-2:#8cb3a0;
+      --accent-3:#efe8dc;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(140,179,160,.16), transparent 32%),
+        radial-gradient(circle at 90% 0%, rgba(216,198,165,.18), transparent 28%),
+        linear-gradient(180deg, #0b0f0e 0%, #0d1211 40%, #0b0f0e 100%);
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max), calc(100% - 32px)); margin-inline:auto}
+    .glass{
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px; border-radius:999px;
+      border:1px solid rgba(216,198,165,.25);
+      color:#efe6d4; background:rgba(216,198,165,.08);
+      font-size:13px; font-weight:600; letter-spacing:.02em;
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(180deg,var(--accent),#f2dfbc); box-shadow:0 0 16px rgba(216,198,165,.7)}
+    .grid-bg{
+      position:fixed; inset:0; pointer-events:none; z-index:-2; opacity:.28;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: radial-gradient(circle at center, black 30%, transparent 85%);
+    }
+    .noise{
+      position:fixed; inset:0; pointer-events:none; z-index:-1; opacity:.03;
+      background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="3" stitchTiles="stitch"/></filter><rect width="140" height="140" filter="url(%23n)" opacity="1"/></svg>');
+    }
+
+    header{
+      position:sticky; top:0; z-index:40;
+      background:linear-gradient(180deg, rgba(11,15,14,.8), rgba(11,15,14,.35));
+      backdrop-filter: blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:16px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:-.03em;
+    }
+    .brand-mark{
+      width:38px; height:38px; border-radius:12px;
+      background:
+        linear-gradient(135deg, rgba(216,198,165,.95), rgba(140,179,160,.95));
+      position:relative;
+      box-shadow:0 10px 30px rgba(216,198,165,.18);
+    }
+    .brand-mark::before,.brand-mark::after{
+      content:""; position:absolute; inset:8px; border:1.5px solid rgba(11,15,14,.55); border-radius:10px;
+    }
+    .brand-mark::after{ inset:14px; border-radius:8px }
+    .nav-links{display:flex; gap:26px; align-items:center}
+    .nav-links a{color:var(--muted); font-weight:600; font-size:14px}
+    .nav-links a:hover{color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      min-height:48px; padding:0 18px; border-radius:14px; border:1px solid transparent;
+      font-weight:700; transition:.25s ease; cursor:pointer; white-space:nowrap;
+    }
+    .btn-primary{
+      color:#101311;
+      background:linear-gradient(180deg, var(--accent-3), var(--accent));
+      box-shadow:0 12px 28px rgba(216,198,165,.22);
+    }
+    .btn-primary:hover{transform:translateY(-2px); box-shadow:0 18px 36px rgba(216,198,165,.28)}
+    .btn-secondary{
+      color:var(--text); background:rgba(255,255,255,.04); border-color:var(--line);
+    }
+    .btn-secondary:hover{background:rgba(255,255,255,.08); transform:translateY(-2px)}
+    .mobile-toggle{display:none}
+
+    .hero{padding:72px 0 36px}
+    .hero-wrap{
+      display:grid; grid-template-columns: 1.15fr .85fr; gap:28px; align-items:center;
+    }
+    .hero h1{
+      font-family:Manrope, Inter, sans-serif;
+      font-size:clamp(42px, 7vw, 76px);
+      line-height:.96;
+      letter-spacing:-.05em;
+      margin:18px 0 16px;
+      max-width:11.5ch;
+    }
+    .gradient-text{
+      background:linear-gradient(135deg, #fff 20%, #e8dcc7 55%, #8cb3a0 100%);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .hero p{
+      color:var(--muted);
+      font-size:clamp(16px, 2vw, 19px);
+      line-height:1.7;
+      max-width:62ch;
+      margin:0 0 26px;
+    }
+    .hero-actions{display:flex; gap:14px; flex-wrap:wrap}
+    .trust-row{
+      display:flex; gap:22px; flex-wrap:wrap; margin-top:26px; color:#c7cfcb; font-size:14px
+    }
+    .trust-item{display:flex; align-items:center; gap:10px}
+    .check{
+      width:20px;height:20px;border-radius:50%;
+      display:grid; place-items:center;
+      background:rgba(140,179,160,.14); color:#cde3d8; border:1px solid rgba(140,179,160,.22); font-size:12px; font-weight:800;
+    }
+
+    .hero-card{
+      position:relative; border-radius:32px; padding:22px;
+      overflow:hidden;
+    }
+    .hero-card::before{
+      content:""; position:absolute; inset:auto -20% 78% auto; width:220px; height:220px; border-radius:50%;
+      background:radial-gradient(circle, rgba(216,198,165,.32), transparent 65%);
+    }
+    .hero-panel{
+      border-radius:24px; padding:20px; background:rgba(7,10,9,.55); border:1px solid rgba(255,255,255,.08)
+    }
+    .mini-stat-wrap{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px}
+    .mini-stat{padding:18px; border-radius:20px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08)}
+    .mini-stat .label{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.12em}
+    .mini-stat .value{font-size:30px; font-weight:800; margin-top:8px}
+    .bar-card{
+      margin-top:14px; padding:18px; border-radius:20px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08)
+    }
+    .bar-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+    .bars{display:grid; gap:14px}
+    .bar-row{display:grid; grid-template-columns:120px 1fr auto; gap:12px; align-items:center; font-size:14px; color:#dbe3df}
+    .track{height:10px; background:rgba(255,255,255,.07); border-radius:999px; overflow:hidden}
+    .fill{height:100%; border-radius:999px; background:linear-gradient(90deg, var(--accent), var(--accent-2)); box-shadow:0 0 18px rgba(140,179,160,.28)}
+    .chip-list{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+    .chip{
+      padding:10px 12px; border-radius:999px; font-size:12px; color:#e5ece8;
+      background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08);
+    }
+
+    section{padding:34px 0}
+    .section-head{display:flex; justify-content:space-between; gap:20px; align-items:end; margin-bottom:20px}
+    .eyebrow{color:#e7dbc4; font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase}
+    h2{
+      font-family:Manrope, Inter, sans-serif;
+      font-size:clamp(30px, 4vw, 48px);
+      line-height:1.02; letter-spacing:-.04em; margin:8px 0 0;
+    }
+    .subtext{color:var(--muted); line-height:1.7; max-width:68ch}
+
+    .logos{
+      display:grid; grid-template-columns:repeat(4,1fr); gap:14px;
+    }
+    .logo-card{
+      padding:22px; border-radius:22px; text-align:center; font-weight:800; color:#dbe3df;
+      background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08)
+    }
+
+    .problem-solution{
+      display:grid; grid-template-columns:1fr 1fr; gap:18px;
+    }
+    .card{
+      border-radius:26px; padding:26px;
+    }
+    .list{display:grid; gap:14px; margin-top:18px}
+    .list-item{
+      display:flex; gap:14px; align-items:flex-start; color:#dbe3df
+    }
+    .iconbox{
+      flex:none; width:36px; height:36px; border-radius:12px;
+      display:grid; place-items:center; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1)
+    }
+
+    .pricing{
+      display:grid; grid-template-columns:repeat(3,1fr); gap:18px; align-items:stretch;
+    }
+    .price-card{
+      position:relative; padding:26px; border-radius:28px; overflow:hidden;
+    }
+    .price-card.featured{border:1px solid rgba(216,198,165,.28); transform:translateY(-6px)}
+    .popular{
+      position:absolute; top:16px; right:16px; padding:8px 12px; border-radius:999px;
+      background:rgba(216,198,165,.12); border:1px solid rgba(216,198,165,.22); color:#f1e7d7; font-size:12px; font-weight:800
+    }
+    .price-title{font-size:20px; font-weight:800}
+    .price{display:flex; align-items:flex-end; gap:6px; margin:14px 0 10px}
+    .price .num{font-size:48px; font-weight:800; letter-spacing:-.04em}
+    .price .per{color:var(--muted)}
+    .feature-list{display:grid; gap:12px; margin:18px 0 26px}
+    .feature{display:flex; gap:10px; color:#dbe3df}
+    .feature .small-check{
+      width:18px;height:18px;border-radius:50%; display:grid; place-items:center;
+      background:rgba(140,179,160,.15); color:#d6e8e0; font-size:11px; border:1px solid rgba(140,179,160,.22)
+    }
+
+    .showcase{
+      display:grid; grid-template-columns:1fr 1fr; gap:18px;
+    }
+    .sample{
+      padding:24px; border-radius:26px;
+    }
+    .brand-preview{
+      min-height:360px; border-radius:22px; overflow:hidden; border:1px solid rgba(255,255,255,.08);
+      display:grid; grid-template-rows:auto 1fr auto;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(216,198,165,.2), transparent 32%),
+        linear-gradient(180deg, #f3ede2 0%, #efe7d9 100%);
+      color:#262521;
+    }
+    .preview-top{display:flex; justify-content:space-between; align-items:center; padding:22px}
+    .preview-grid{display:grid; place-items:center; padding:20px}
+    .jp-logo{
+      width:180px; aspect-ratio:1; border-radius:30px; border:1px solid rgba(38,37,33,.16);
+      display:grid; place-items:center; position:relative;
+      background:rgba(255,255,255,.45);
+    }
+    .jp-logo::before,.jp-logo::after{
+      content:""; position:absolute; border-radius:22px; border:2px solid #2d2a24;
+      inset:22px;
+    }
+    .jp-logo::after{inset:42px; border-radius:16px}
+    .preview-bottom{padding:22px; display:grid; gap:8px}
+    .copy-card{display:grid; gap:14px}
+    .copy-block{
+      padding:16px; border-radius:18px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08)
+    }
+
+    .faq{display:grid; gap:14px}
+    .faq-item{
+      border-radius:22px; overflow:hidden; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04)
+    }
+    .faq-q{
+      width:100%; background:none; color:var(--text); border:none; outline:none; text-align:left;
+      padding:20px 22px; font-size:16px; font-weight:700; display:flex; justify-content:space-between; gap:16px; cursor:pointer
+    }
+    .faq-a{
+      max-height:0; overflow:hidden; transition:max-height .3s ease; color:var(--muted); line-height:1.7;
+      padding:0 22px;
+    }
+    .faq-item.active .faq-a{max-height:180px; padding:0 22px 20px}
+    .faq-plus{transition:.25s ease}
+    .faq-item.active .faq-plus{transform:rotate(45deg)}
+
+    .cta{
+      padding:28px; border-radius:30px;
+      display:grid; grid-template-columns:1.2fr .8fr; gap:20px; align-items:center;
+    }
+    .cta-box{
+      padding:18px; border-radius:22px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08)
+    }
+    .form{
+      display:grid; gap:12px;
+    }
+    .input, .select, .textarea{
+      width:100%; background:rgba(255,255,255,.06); color:var(--text);
+      border:1px solid rgba(255,255,255,.1); border-radius:14px; padding:14px 15px; font:inherit; outline:none;
+      transition:.2s ease;
+    }
+    .input:focus, .select:focus, .textarea:focus{border-color:rgba(216,198,165,.45); box-shadow:0 0 0 4px rgba(216,198,165,.08)}
+    .textarea{min-height:110px; resize:vertical}
+    .fine{font-size:12px; color:var(--muted)}
+
+    footer{
+      padding:28px 0 42px; color:var(--muted)
+    }
+    .footer{
+      display:flex; justify-content:space-between; gap:20px; align-items:center; flex-wrap:wrap;
+      padding-top:18px; border-top:1px solid rgba(255,255,255,.08)
+    }
+
+    .floating-proof{
+      position:fixed; left:16px; bottom:16px; z-index:30; max-width:320px;
+      padding:14px 16px; border-radius:18px; display:none;
+    }
+
+    .reveal{opacity:0; transform:translateY(14px); transition:.6s ease}
+    .reveal.in{opacity:1; transform:none}
+
+    @media (max-width: 980px){
+      .hero-wrap,.problem-solution,.showcase,.cta{grid-template-columns:1fr}
+      .pricing,.logos{grid-template-columns:1fr 1fr}
+      .nav-links{display:none; position:absolute; top:72px; left:16px; right:16px; padding:16px; border-radius:20px; flex-direction:column; align-items:flex-start; background:rgba(11,15,14,.95); border:1px solid rgba(255,255,255,.08)}
+      .nav-links.open{display:flex}
+      .mobile-toggle{display:inline-flex}
+    }
+    @media (max-width: 640px){
+      .container{width:min(var(--max), calc(100% - 20px))}
+      .hero{padding-top:42px}
+      .logos,.pricing{grid-template-columns:1fr}
+      .section-head{flex-direction:column; align-items:flex-start}
+      .bar-row{grid-template-columns:1fr; gap:8px}
+      .floating-proof{left:10px; right:10px; max-width:none}
+      .hero-card{padding:14px}
+      .card,.sample,.price-card,.cta{padding:20px}
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="noise"></div>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="Veneer AI home">
+        <span class="brand-mark"></span>
+        <span>Veneer AI</span>
+      </a>
+
+      <nav class="nav-links" id="navMenu">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#samples">Samples</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a href="#pricing" class="btn btn-primary">Get Brand Launch Kit</a>
+      </nav>
+
+      <button class="btn btn-secondary mobile-toggle" id="menuBtn" aria-label="Toggle navigation">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div class="reveal">
+          <div class="badge"><span class="dot"></span> AI branding built to close the Trust Gap</div>
+          <h1><span class="gradient-text">Turn a basic store into a premium brand</span> in under 24 hours.</h1>
+          <p>Veneer AI helps e-commerce founders go from “random dropshipping site” to “high-trust brand customers actually buy from.” Get a premium name, mission statement, Japandi-inspired logo, and conversion-focused ad hooks—delivered fast.</p>
+          <div class="hero-actions">
+            <a href="#pricing" class="btn btn-primary">Launch My Brand</a>
+            <a href="#samples" class="btn btn-secondary">See Sample Kit</a>
+          </div>
+          <div class="trust-row">
+            <div class="trust-item"><span class="check">✓</span> 24-hour turnaround</div>
+            <div class="trust-item"><span class="check">✓</span> Conversion-focused messaging</div>
+            <div class="trust-item"><span class="check">✓</span> Premium brand positioning</div>
+          </div>
+        </div>
+
+        <div class="hero-card glass reveal">
+          <div class="hero-panel">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+              <div>
+                <div style="font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.12em;text-transform:uppercase">Trust Gap Dashboard</div>
+                <div style="font-size:28px;font-weight:800; margin-top:6px">Basic Store → Brand</div>
+              </div>
+              <div class="badge" style="padding:8px 10px">Live Preview</div>
+            </div>
+
+            <div class="mini-stat-wrap">
+              <div class="mini-stat">
+                <div class="label">Delivery Speed</div>
+                <div class="value">24h</div>
+              </div>
+              <div class="mini-stat">
+                <div class="label">Core Assets</div>
+                <div class="value">4</div>
+              </div>
+            </div>
+
+            <div class="bar-card">
+              <div class="bar-head">
+                <strong>Brand Lift Potential</strong>
+                <span style="color:var(--muted);font-size:13px">Estimated positioning impact</span>
+              </div>
+              <div class="bars">
+                <div class="bar-row">
+                  <span>Trust</span>
+                  <div class="track"><div class="fill" style="width:94%"></div></div>
+                  <strong>+94%</strong>
+                </div>
+                <div class="bar-row">
+                  <span>Perceived Value</span>
+                  <div class="track"><div class="fill" style="width:89%"></div></div>
+                  <strong>+89%</strong>
+                </div>
+                <div class="bar-row">
+                  <span>Ad Clarity</span>
+                  <div class="track"><div class="fill" style="width:91%"></div></div>
+                  <strong>+91%</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="chip-list">
+              <span class="chip">Premium Name</span>
+              <span class="chip">Mission Statement</span>
+              <span class="chip">Japandi Logo</span>
+              <span class="chip">Ad Hooks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="container">
+        <div class="logos">
+          <div class="logo-card glass">HIGH-TRUST POSITIONING</div>
+          <div class="logo-card glass">AI VISUAL IDENTITY</div>
+          <div class="logo-card glass">CONVERSION COPY</div>
+          <div class="logo-card glass">2026 READY</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Why Veneer AI</div>
+            <h2>Most stores don’t have a product problem. They have a trust problem.</h2>
+          </div>
+          <p class="subtext">When your brand looks generic, shoppers assume your product is too. We rebuild your perception layer fast—so your store feels premium, intentional, and worth buying from.</p>
+        </div>
+
+        <div class="problem-solution">
+          <div class="card glass reveal">
+            <div class="eyebrow">The Problem</div>
+            <h3 style="font-size:28px; margin:10px 0 0">Why visitors bounce</h3>
+            <div class="list">
+              <div class="list-item">
+                <div class="iconbox">✕</div>
+                <div><strong>Generic branding</strong><br><span style="color:var(--muted)">Your store looks like hundreds of others selling similar products.</span></div>
+              </div>
+              <div class="list-item">
+                <div class="iconbox">✕</div>
+                <div><strong>No emotional identity</strong><br><span style="color:var(--muted)">Customers can’t connect with a mission, feeling, or reason to trust you.</span></div>
+              </div>
+              <div class="list-item">
+                <div class="iconbox">✕</div>
+                <div><strong>Weak ad angles</strong><br><span style="color:var(--muted)">Your creatives and hooks don’t frame the offer with clarity or desire.</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card glass reveal">
+            <div class="eyebrow">The Solution</div>
+            <h3 style="font-size:28px; margin:10px 0 0">Brand Launch Kit</h3>
+            <div class="list">
+              <div class="list-item">
+                <div class="iconbox">✓</div>
+                <div><strong>Premium brand naming</strong><br><span style="color:var(--muted)">A distinctive, elevated name aligned to your product category and audience.</span></div>
+              </div>
+              <div class="list-item">
+                <div class="iconbox">✓</div>
+                <div><strong>Mission-led positioning</strong><br><span style="color:var(--muted)">We define the story and values that make your store feel credible and intentional.</span></div>
+              </div>
+              <div class="list-item">
+                <div class="iconbox">✓</div>
+                <div><strong>Logo + ad hooks</strong><br><span style="color:var(--muted)">Minimal Japandi-inspired identity plus ready-to-use ad copy angles that convert.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Pricing</div>
+            <h2>Simple offers designed to sell fast</h2>
+          </div>
+          <p class="subtext">Choose a package that matches your stage. Each offer is structured to create immediate perceived value for your store and increase your ability to charge more confidently.</p>
+        </div>
+
+        <div class="pricing">
+          <div class="price-card glass reveal">
+            <div class="price-title">Starter Identity</div>
+            <div style="color:var(--muted); margin-top:8px">For testing products that need a cleaner look.</div>
+            <div class="price">
+              <div class="num">$79</div>
+              <div class="per">one-time</div>
+            </div>
+            <div class="feature-list">
+              <div class="feature"><span class="small-check">✓</span><span>1 premium brand name</span></div>
+              <div class="feature"><span class="small-check">✓</span><span>Short mission statement</span></div>
+              <div class="feature"><span class="small-check">✓</span><span>Simple logo concept</span></div>
+              <div class="feature"><span class="small-check">✓</span><span>3 social ad hooks</span></div>
+            </div>
+            <a href="#contact" class="btn btn-secondary" style="width:100%">Choose Starter</a>
+          </div>
+
+          <div class="price-card glass featured reveal">
+            <div class="popular">Most Popular</div>
+            <div class="price-title">Brand Launch Kit</div>
+            <div style="color:var(--muted); margin-top:8px">Your flagship offer for serious store upgrades.</div>
+            <div class="price">
+              <div class="num">$149</div>
+              <div class="per">one-time</div>
+            </div>
+            <div class="feature-list">
+              <div class="feature"><span class="small-check">✓</span><span>3 premium brand name options</span></div>
+              <div class="feature"><span class="small-check">✓</span><span>Mission statement + positioning line</span></div>
+              <div class="feature"><span class="small-check">✓</span><span>Japandi-inspired logo direction</span></div>
+              <div class="feature"><span class="small-check">✓</span><span>10 high-converting ad hooks</span></div>
+              <div class="feature"><span class="small-check">✓</span><span>24-hour priority turnaround</span></div>
+            </div>
+            <a href="#contact" class="btn btn-primary" style="width:100%">Get the Launch Kit</a>
+          </div>
+
+          <div class="price-card glass reveal">
+            <div class="price-title">Brand Authority+</div>
+            <div style="color:var(--muted); margin-top:8px">For operators ready to build a more complete identity.</div>
+            <div class="price">
+              <div class="num">$299</div>
+              <div class="per">one-time</div>
+            </div>
+            <div class="feature-list">
+              <div class="feature"><span class="small-check">✓</span><span>Everything in Launch Kit</span></div>
+              <div class="feature"><span class="small-check">✓</span><span>Homepage hero copy suggestions</span></div>
+              <div class="feature"><span class="small-check">✓</span><span>Product page tone guidance</span></div>
+              <div class="feature"><span class="small-check">✓</span><span>15 ad hooks + 5 headline variants</span></div>
+              <div class="feature"><span class="small-check">✓</span><span>1 revision round included</span></div>
+            </div>
+            <a href="#contact" class="btn btn-secondary" style="width:100%">Upgrade My Brand</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="samples">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Sample Output</div>
+            <h2>See what premium branding looks like</h2>
+          </div>
+          <p class="subtext">A strong brand makes a product feel more trustworthy before customers even read the details. Here’s a sample concept styled the Veneer AI way.</p>
+        </div>
+
+        <div class="showcase">
+          <div class="sample glass reveal">
+            <div class="brand-preview">
+              <div class="preview-top">
+                <div style="font-weight:800; letter-spacing:.08em">HIKARI HOME</div>
+                <div style="font-size:13px; opacity:.72">Japandi Balance</div>
+              </div>
+              <div class="preview-grid">
+                <div class="jp-logo"></div>
+              </div>
+              <div class="preview-bottom">
+                <div style="font-size:28px; font-weight:800; letter-spacing:-.04em">Quiet essentials for calmer living.</div>
+                <div style="opacity:.72; line-height:1.6">Minimal objects, elevated rituals, timeless comfort.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sample glass reveal">
+            <div class="copy-card">
+              <div class="copy-block">
+                <div class="eyebrow">Brand Name</div>
+                <div style="font-size:28px; font-weight:800; margin-top:10px">Hikari Home</div>
+              </div>
+              <div class="copy-block">
+                <div class="eyebrow">Mission Statement</div>
+                <div style="margin-top:10px; color:#dbe3df; line-height:1.7">We design calming home essentials that help modern households create space, rhythm, and peace in everyday life.</div>
+              </div>
+              <div class="copy-block">
+                <div class="eyebrow">Ad Hooks</div>
+                <div style="margin-top:10px; color:#dbe3df; line-height:1.9">
+                  • Your home doesn’t need more stuff—just better essentials.<br>
+                  • Turn everyday routines into premium rituals.<br>
+                  • The easiest way to make your space feel expensive.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="container">
+        <div class="cta glass">
+          <div>
+            <div class="eyebrow">Revenue-focused offer</div>
+            <h2>Position your service to close buyers today</h2>
+            <p class="subtext" style="margin-top:12px">This site is designed to help you convert traffic into leads and paid clients. Use the form to capture inbound interest, qualify prospects, and start selling your Brand Launch Kit immediately.</p>
+            <div class="trust-row" style="margin-top:20px">
+              <div class="trust-item"><span class="check">✓</span> Clear pricing</div>
+              <div class="trust-item"><span class="check">✓</span> Premium positioning</div>
+              <div class="trust-item"><span class="check">✓</span> Lead capture built-in</div>
+            </div>
+          </div>
+          <div class="cta-box">
+            <div style="font-weight:800; font-size:20px; margin-bottom:10px">What clients get</div>
+            <div class="feature-list" style="margin:0">
+              <div class="feature"><span class="small-check">✓</span><span>Fast turnaround to reduce decision friction</span></div>
+              <div class="feature"><span class="small-check">✓</span><span>Higher perceived product value</span></div>
+              <div class="feature"><span class="small-check">✓</span><span>Sharper copy for ads and landing pages</span></div>
+              <div class="feature"><span class="small-check">✓</span><span>A more trustworthy store identity</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">FAQ</div>
+            <h2>Questions buyers ask before they purchase</h2>
+          </div>
+        </div>
+        <div class="faq">
+          <div class="faq-item reveal">
+            <button class="faq-q">What exactly is included in the Brand Launch Kit? <span class="faq-plus">+</span></button>
+            <div class="faq-a">You receive premium brand name options, a mission statement, a positioning line, a Japandi-inspired logo direction, and social media ad hooks you can use for marketing immediately.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q">How fast is delivery? <span class="faq-plus">+</span></button>
+            <div class="faq-a">Our core promise is delivery in under 24 hours for the Brand Launch Kit, making it ideal for founders moving quickly or testing products at speed.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q">Who is this best for? <span class="faq-plus">+</span></button>
+            <div class="faq-a">This service is best for dropshippers, one-product store owners, early-stage e-commerce brands, and anyone who needs a stronger perception layer to increase trust and conversion.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q">Can this help me charge more? <span class="faq-plus">+</span></button>
+            <div class="faq-a">Yes. Better branding often improves perceived value, which can support stronger pricing, better conversion rates, and improved customer confidence across your funnel.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Get Started</div>
+            <h2>Book your branding request</h2>
+          </div>
+          <p class="subtext">Use this form to collect leads or direct prospects into your sales workflow. The current demo stores entries locally in-browser for preview.</p>
+        </div>
+
+        <div class="cta glass reveal" style="grid-template-columns:1fr 1fr">
+          <div>
+            <div style="font-size:26px; font-weight:800; margin-bottom:10px">Ready to monetize this site?</div>
+            <p class="subtext">Pair this page with Stripe payment links, Gumroad, Lemon Squeezy, or Calendly to accept payments and automate fulfillment. The form below already creates a working intake flow for leads.</p>
+            <div class="chip-list" style="margin-top:18px">
+              <span class="chip">Lead Capture</span>
+              <span class="chip">Offer Validation</span>
+              <span class="chip">Client Intake</span>
+              <span class="chip">Sales Ready</span>
+            </div>
+          </div>
+
+          <form class="form" id="leadForm">
+            <input class="input" type="text" name="name" placeholder="Your name" required>
+            <input class="input" type="email" name="email" placeholder="Email address" required>
+            <input class="input" type="text" name="store" placeholder="Store URL or niche">
+            <select class="select" name="package" required>
+              <option value="">Select package</option>
+              <option>Starter Identity — $79</option>
+              <option>Brand Launch Kit — $149</option>
+              <option>Brand Authority+ — $299</option>
+            </select>
+            <textarea class="textarea" name="details" placeholder="What do you sell and what kind of brand feeling do you want?"></textarea>
+            <button class="btn btn-primary" type="submit">Submit Request</button>
+            <div class="fine">Demo behavior: submissions are stored in local browser storage and shown as success feedback.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span>Veneer AI</span>
+      </div>
+      <div>© <span id="year"></span> Veneer AI. Built to bridge the Trust Gap.</div>
+    </div>
+  </footer>
+
+  <div class="floating-proof glass" id="proofPopup"></div>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.getElementById('navMenu');
+    menuBtn?.addEventListener('click', () => navMenu.classList.toggle('open'));
+
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold: .12});
+    revealEls.forEach(el=>io.observe(el));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('leadForm');
+    const proofPopup = document.getElementById('proofPopup');
+
+    function showProof(message){
+      proofPopup.innerHTML = message;
+      proofPopup.style.display = 'block';
+      proofPopup.style.opacity = '0';
+      proofPopup.style.transform = 'translateY(10px)';
+      requestAnimationFrame(()=>{
+        proofPopup.style.transition = '.3s ease';
+        proofPopup.style.opacity = '1';
+        proofPopup.style.transform = 'translateY(0)';
+      });
+      setTimeout(()=>{
+        proofPopup.style.opacity = '0';
+        proofPopup.style.transform = 'translateY(10px)';
+        setTimeout(()=> proofPopup.style.display = 'none', 300);
+      }, 4000);
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      const leads = JSON.parse(localStorage.getItem('veneer_leads') || '[]');
+      leads.push({...data, createdAt: new Date().toISOString()});
+      localStorage.setItem('veneer_leads', JSON.stringify(leads));
+      form.reset();
+      showProof('<strong>Request received.</strong><br><span style="color:var(--muted)">Your branding intake was saved successfully. Connect this form to your email, CRM, or payment link to start closing clients.</span>');
+    });
+
+    const demoProofs = [
+      'New inquiry: <strong>Brand Launch Kit</strong> requested for a wellness store.',
+      'A founder just viewed the <strong>Brand Authority+</strong> offer.',
+      'Lead captured: <strong>e-commerce skincare brand</strong> wants premium positioning.',
+      'Interest spike: <strong>Starter Identity</strong> package clicked on mobile.'
+    ];
+    let proofIndex = 0;
+    setTimeout(() => {
+      showProof(demoProofs[proofIndex]);
+      setInterval(()=>{
+        proofIndex = (proofIndex + 1) % demoProofs.length;
+        showProof(demoProofs[proofIndex]);
+      }, 11000);
+    }, 3500);
+  </script>
+</body>
+</html>
