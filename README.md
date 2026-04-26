@@ -132,10 +132,10 @@ https://github.com/user-attachments/assets/2bc3bf81-863e-4a73-a5fa-840e9741a0ad
 
 <script>
   // STEP 1: Paste your Zapier Webhook URL between the quotes below
-  const ZAPIER_WEBHOOK_URL = 'PASTE_YOUR_LINK_HERE';
+  const ZAPIER_WEBHOOK_URL = 'PASTE_YOUR_LINK_HERE';//hooks.zapier.com/hooks/catch/27252636/ujtjcu5/
 
   // STEP 2: Paste your PayPal.me/Checkout link between the quotes below
-  const PAYMENT_URL = 'PASTE_YOUR_PAYMENT_LINK_HERE';
+  const PAYMENT_URL = 'PASTE_YOUR_PAYMENT_LINK_HERE';//paypal.me/Veenerai
 
   const form = document.getElementById('identity-form');
   const success = document.getElementById('successMessage');
